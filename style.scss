@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+// font-family: "Roboto", sans-serif;
+body {
+  background-color: rgb(85, 83, 83);
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto";
+}
+.app {
+  margin-top: 2rem;
+  min-width: 95%;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 1rem 0;
+  &_location {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    &_icon {
+      height: 1.2rem;
+    }
+  }
+  &_date {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  &_weather-now {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    background-color: rgb(58, 147, 125);
+    &_icon {
+      margin-right: 1rem;
+    }
+  }
+  &_weather-hours {
+    height: 4rem;
+  }
+}
