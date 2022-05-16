@@ -17,12 +17,13 @@ class App {
   ];
   days = ["Mon.", "Tu.", "Wed.", "Thu.", "Fri", "Sat", "Sun."];
 
-  key = "2ba13641637744eba712b6cb02fae64a";
+  key = "f8d0779a0fd8a627c49b8be4881c5107";
   city = document.querySelector(".app_location_city");
   tempPlace = document.querySelector(".app_weather-now_temp");
   weatherImg = document.querySelector(".app_weather-now_icon");
   date = document.querySelector(".app_date");
   swiperWrapper = document.querySelector(".swiper-wrapper");
+  dailyWeather = document.querySelector(".app_weather_daily");
 
   constructor() {
     navigator.geolocation.getCurrentPosition(
@@ -44,6 +45,7 @@ class App {
         this._setImage(this.weatherImg, data.current.weather[0].icon);
         this._setCity(lat, lon);
         this._weatherPerHour(data);
+        this._weatherPerDay(data);
 
         console.log(data);
       });
@@ -72,6 +74,7 @@ class App {
     const dayNum = date.getUTCDate();
     const mounth = date.getUTCMonth();
     const year = date.getUTCFullYear();
+    console.log(dayStr);
 
     this.date.textContent = `${this.days[dayStr]} ${dayNum} ${
       this.mounths[mounth + 1]
@@ -101,6 +104,24 @@ class App {
       this.swiperWrapper.insertAdjacentHTML("beforeend", hourBox);
     });
   }
+  _weatherPerDay(data) {
+    data.daily.forEach((el) => {
+      const dayName = new Date(el.dt * 1000).getDay();
+      const iconCode = el.weather[0].icon;
+      const tempMax = Math.round(el.temp.max);
+      const tempMin = Math.round(el.temp.min);
+      const html = `<div class="app_weather_daily_day">
+      <div class="app_weather_daily_day_name">${this.days[dayName]}</div>
+      <img class="app_weather_daily_day_weather-icon" src="https://openweathermap.org/img/wn/${iconCode}@2x.png"></img>
+      <div class="app_weather_daily_day_temp">
+      <div class="app_weather_daily_day_temp_max">${tempMax}/</div>
+      <div class="app_weather_daily_day_temp_min">${tempMin}</div>
+      </div>
+      <div class="app_weather_daily_day_pop"></div>
+    </div>`;
+      this.dailyWeather.insertAdjacentHTML("beforeend", html);
+    });
+  }
 }
 
 const app = new App();
@@ -125,3 +146,6 @@ const swiper = new Swiper(".swiper", {
     rows: 1,
   },
 });
+
+const x = new Date(1652695200);
+console.log(x.getDay());

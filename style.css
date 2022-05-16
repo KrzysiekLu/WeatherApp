@@ -21,7 +21,7 @@ body {
 
 .app {
   margin-top: 20px;
-  max-width: 80%;
+  min-width: 80%;
   background-color: whitesmoke;
   border-radius: 10px;
   padding: 1rem 0;
@@ -107,8 +107,43 @@ body {
   height: 1.1rem;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  content: "";
+.app_weather_daily {
+  margin-top: 7rem;
+  width: 100%;
+  height: 200px;
+  background-color: #3a937d;
+}
+
+.app_weather_daily_day {
+  background-color: #3a937d;
+  width: 100%;
+  height: 4rem;
+  border-bottom: 3px solid whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+.app_weather_daily_day_name {
+  width: 3rem;
+}
+
+.app_weather_daily_day_weather-icon {
+  height: 3rem;
+  margin-right: 2rem;
+}
+
+.app_weather_daily_day_temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 /*# sourceMappingURL=style.css.map */
