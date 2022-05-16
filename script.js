@@ -127,7 +127,7 @@ class App {
 const app = new App();
 
 const swiper = new Swiper(".swiper", {
-  slidesPerView: 5,
+  slidesPerView: 6,
   spaceBetween: 3,
   freeMode: {
     enabled: true,
