@@ -50,7 +50,7 @@ body {
     height: 4rem;
     .swiper {
       margin-top: 1rem;
-      width: 100%;
+      min-width: 100%;
       height: 10rem;
     }
 
@@ -59,7 +59,7 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: rgb(54, 194, 159);
+      background-color: rgb(54, 194, 73);
 
       &-icon {
         height: 3rem;
