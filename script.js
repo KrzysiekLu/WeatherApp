@@ -44,6 +44,8 @@ class App {
         this._setImage(this.weatherImg, data.current.weather[0].icon);
         this._setCity(lat, lon);
         this._weatherPerHour(data);
+
+        console.log(data);
       });
   }
 
@@ -85,7 +87,6 @@ class App {
       let hour = 0;
       if (timeConvert < 10) {
         hour = `0${timeConvert}:00`;
-        console.log(hour);
       } else {
         hour = `${timeConvert}:00`;
       }
@@ -119,13 +120,8 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  hiddenClass: "swiper-button-hidden",
   grid: {
     fill: "column",
     rows: 1,
   },
 });
-
-fetch(
-  `https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key}`
-);

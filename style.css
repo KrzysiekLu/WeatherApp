@@ -21,7 +21,7 @@ body {
 
 .app {
   margin-top: 20px;
-  min-width: 80%;
+  max-width: 80%;
   background-color: whitesmoke;
   border-radius: 10px;
   padding: 1rem 0;
@@ -107,7 +107,8 @@ body {
   height: 1.1rem;
 }
 
+.swiper-button-next::after,
 .swiper-button-prev::after {
-  height: 100px;
+  content: "";
 }
 /*# sourceMappingURL=style.css.map */
