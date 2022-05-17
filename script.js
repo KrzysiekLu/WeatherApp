@@ -146,6 +146,10 @@ const swiper = new Swiper(".swiper", {
     enabled: true,
     sticky: true,
   },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+  },
 
   controller: {
     inverse: true,
