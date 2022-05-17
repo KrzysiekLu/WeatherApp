@@ -21,6 +21,11 @@ class App {
   city = document.querySelector(".app_location_city");
   tempPlace = document.querySelector(".app_weather-now_temp");
   weatherImg = document.querySelector(".app_weather-now_icon");
+  detailsFeelsLike = document.querySelector(
+    ".app_weather-now_details_feels_like"
+  );
+  detailsWind = document.querySelector(".app_weather-now_details_wind");
+  detailsPresure = document.querySelector(".app_weather-now_details_pressure");
   date = document.querySelector(".app_date");
   swiperWrapper = document.querySelector(".swiper-wrapper");
   dailyWeather = document.querySelector(".app_weather_daily");
@@ -46,6 +51,7 @@ class App {
         this._setCity(lat, lon);
         this._weatherPerHour(data);
         this._weatherPerDay(data);
+        this._currentWeatherDetails(data);
 
         console.log(data);
       });
@@ -121,6 +127,13 @@ class App {
     </div>`;
       this.dailyWeather.insertAdjacentHTML("beforeend", html);
     });
+  }
+  _currentWeatherDetails(data) {
+    this.detailsFeelsLike.textContent = `Feals-like: ${Math.round(
+      data.current.feels_like
+    )} C`;
+    this.detailsPresure.textContent = `Preasure: ${data.current.pressure} hPa`;
+    this.detailsWind.textContent = `Wind: ${data.current.wind_speed} m/s`;
   }
 }
 
