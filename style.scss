@@ -44,6 +44,25 @@ body {
     &_unit {
       height: 3rem;
     }
+    &_pop {
+      &_icon {
+        clip-path: circle(50% at 50% 50%);
+        border-radius: 100%;
+        background-color: white;
+        height: 30px;
+        width: 30px;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid rgb(144, 196, 241);
+        &_bg {
+          position: absolute;
+          background-color: rgb(144, 196, 241);
+          bottom: 0;
+          width: 100%;
+          height: 40%;
+        }
+      }
+    }
     &_details {
       background-color: rgb(151, 197, 171);
       padding: 1rem;
